@@ -54,15 +54,6 @@ static NSString *bim_sharePath = nil;
     //    }
 
     @try {
-        NSString *dbDirPath = [bim_rootPath stringByAppendingPathComponent:@"db"];
-        [[self class] createDir:dbDirPath];
-
-        NSString *dataDirPath = [bim_rootPath stringByAppendingPathComponent:@"data"];
-        [[self class] createDir:dataDirPath];
-
-        NSString *logDirPath = [bim_rootPath stringByAppendingPathComponent:@"log"];
-        [[self class] createDir:logDirPath];
-
         //公共目录文件
         //不存在share目录，创建share目录
         NSString *sharePath = [WCFileController sharePath];
@@ -74,9 +65,6 @@ static NSString *bim_sharePath = nil;
 
         NSString *audioDirPath = [sharePath stringByAppendingPathComponent:@"audio"];
         [[self class] createDir:audioDirPath];
-
-        NSString *crashDirPath = [sharePath stringByAppendingPathComponent:@"log"];
-        [[self class] createDir:crashDirPath];
 
         dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [[self class] moveAndDeleteImgSourceFile];

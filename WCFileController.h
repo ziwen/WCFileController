@@ -27,13 +27,6 @@
 + (NSString *)imagePath;
 
 /**
- *  @brief  db目录路径
- *
- *  @return db目录路径
- */
-+ (NSString *)dbPath;
-
-/**
  *  @brief  音频目录路径
  *
  *  @return 音频目录路径
